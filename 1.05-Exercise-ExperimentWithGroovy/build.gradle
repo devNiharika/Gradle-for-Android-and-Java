@@ -1,0 +1,66 @@
+/*
+
+In these exercises we'll explore the Groovy features most relevant to Gradle
+build scripts. Each topic will be contained in the action of a Gradle task, so
+to test run your code you'll need to run that particular task. If you get
+stuck, check out the solution.gradle file in this directory.
+
+*/
+
+task stringsAndTypes << {
+    // TODO: Run `$ gradle sAT`
+    println "Nice work abbreviating the task name"
+    def foo = 4.2
+    println "Value of foo is $foo" 
+    println "Class of foo is ${foo.class}"
+    println "Square root of 127 is ${Math.sqrt(127)}"
+    // TODO: Create a variable named foo and assign it the value 4.2
+
+    // TODO: Print the value and class of foo
+
+    // TODO: Use string interpolation to print the square root of 127
+    // HINT: http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html
+    foo =new java.util.date();
+    println "Value of foo is $foo"
+    println "Class of foo is ${foo.class}"
+    // TODO: Assign the current date to foo and print it, along with its type
+    // HINT:
+    // http://docs.oracle.com/javase/7/docs/api/java/util/package-summary.html
+
+    // TODO: Use the `substring` method to extract my name from this string
+    def hello = "Hello, Jeremy.";
+    def sub = hello.extract(7,13)
+    println "My name is ${sub.toUpperCase()}"
+
+    // TODO: Use `toUpperCase` to capitalize and print my name
+
+}
+
+task closures << {
+
+	def closure (a,b){
+		a-> a+b;
+
+
+	}
+	println "Sum of 17 and 25 is ${closure(17,25)}";
+    // TODO: Declare a closure that takes two arguments and adds them together
+    // HINT: http://www.groovy-lang.org/closures.html
+
+    // TODO: Call your closure with arguments 17 and 25, and print the result
+    // Beware that something like `println addTwo 17, 25` is ambiguous
+}
+
+task lists << {
+	 def myList = ["Maha Lacto", "Mango Bite", "Orange Bite", "Coffee Bite", "Pulse"]
+	 def myCapitalList = myList.collect{it.toUpperCase()}
+	 myCapitalList.each{println it}
+    // TODO: Declare a list containing 5 of your favorite candies
+    // HINT: Try searching for "groovy list literal"
+
+    // TODO: Create a new list of your candies in all caps
+    // HINT: http://mrhaki.blogspot.ca/2010/05/groovy-goodness-use-collect-with.html
+
+    // TODO: Print each capital candy
+
+}
